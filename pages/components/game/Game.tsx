@@ -4,6 +4,7 @@ import Snake from "@/pages/components/snake/Snake";
 import { Direction } from "@/pages/types/type";
 import { useSnakeLogic } from "@/pages/components/snake/SnakeMovement";
 import gameOver from "@/pages/components/game/GameOver";
+import Over from "@/pages/components/game/GameOverPage";
 
 interface GameProps {}
 
@@ -51,6 +52,7 @@ const Game: React.FC<GameProps> = ({}) => {
       Snake({ context, snakeBodyX, snakeBodyY });
     } else {
       setDirection(null);
+      Over(context);
     }
   };
 
