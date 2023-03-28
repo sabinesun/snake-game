@@ -3,6 +3,7 @@ import Canvas from "@/pages/components/canvas/Canvas";
 import Snake from "@/pages/components/snake/Snake";
 import { Direction } from "@/pages/types/type";
 import { useSnakeLogic } from "@/pages/components/snake/SnakeMovement";
+import gameOver from "@/pages/components/game/GameOver";
 
 interface GameProps {}
 
@@ -45,8 +46,12 @@ const Game: React.FC<GameProps> = ({}) => {
   }, [direction]);
 
   const draw = (context: CanvasRenderingContext2D) => {
-    context.clearRect(0, 0, 750, 500);
-    Snake({ context, snakeBodyX, snakeBodyY });
+    if (!gameOver(snakeBodyX, snakeBodyY, context)) {
+      context.clearRect(0, 0, 750, 500);
+      Snake({ context, snakeBodyX, snakeBodyY });
+    } else {
+      setDirection(null);
+    }
   };
 
   useEffect(() => {
