@@ -52,11 +52,11 @@ const Game: React.FC<GameProps> = ({}) => {
     }, 100);
     // update snake position every 1 second
     return () => clearInterval(intervalId);
-  }, [direction]);
+  }, [direction, moveSnake]);
 
   useEffect(() => {
     draw;
-  }, [direction, snakeBodyX, snakeBodyY]);
+  }, [direction, snakeBodyX, snakeBodyY, draw]);
 
   return (
     <>
