@@ -1,24 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
 import Canvas from "@/pages/components/canvas/Canvas";
 import Snake from "@/pages/components/snake/Snake";
-
+import { Direction } from "@/pages/types/type";
+import { useSnakePositionX, useSnakePositionY } from "@/pages/hooks/useState";
 interface GameProps {}
-
-enum Direction {
-  Up = "Up",
-  Down = "Down",
-  Left = "Left",
-  Right = "Right",
-}
 
 const Game: React.FC<GameProps> = ({}) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const [direction, setDirection] = useState(Direction.Right);
 
-  const x = [30, 20, 10, 0];
-  const y = [0, 0, 0, 0];
-  const [snakeBodyX, setSnakeBodyX] = useState<number[]>(x);
-  const [snakeBodyY, setSnakeBodyY] = useState<number[]>(y);
+  const { snakeBodyX, setSnakeBodyX } = useSnakePositionX();
+  const { snakeBodyY, setSnakeBodyY } = useSnakePositionY();
 
   const draw = (context: CanvasRenderingContext2D) => {
     context.clearRect(0, 0, 750, 500);
@@ -30,64 +22,57 @@ const Game: React.FC<GameProps> = ({}) => {
       switch (event.key) {
         case "ArrowUp":
           setDirection(Direction.Up);
-          setSnakeBodyY((prevArray) =>
+          setSnakeBodyY((prevArray: number[]) =>
             prevArray.map((value, index) =>
               index === 0 ? prevArray[0] - 10 : prevArray[index - 1]
             )
           );
-          setSnakeBodyX((prevArray) =>
+          setSnakeBodyX((prevArray: number[]) =>
             prevArray.map((value, index) =>
               index === 0 ? prevArray[0] : prevArray[index - 1]
             )
           );
-          console.log(snakeBodyX + " " + snakeBodyY);
           break;
 
         case "ArrowDown":
           setDirection(Direction.Down);
-          setSnakeBodyY((prevArray) =>
+          setSnakeBodyY((prevArray: number[]) =>
             prevArray.map((value, index) =>
               index === 0 ? prevArray[0] + 10 : prevArray[index - 1]
             )
           );
-          setSnakeBodyX((prevArray) =>
+          setSnakeBodyX((prevArray: number[]) =>
             prevArray.map((value, index) =>
               index === 0 ? prevArray[0] : prevArray[index - 1]
             )
           );
-          console.log(snakeBodyX + " " + snakeBodyY);
           break;
 
         case "ArrowLeft":
           setDirection(Direction.Left);
-          setSnakeBodyX((prevArray) =>
+          setSnakeBodyX((prevArray: number[]) =>
             prevArray.map((value, index) =>
               index === 0 ? prevArray[0] - 10 : prevArray[index - 1]
             )
           );
-          setSnakeBodyY((prevArray) =>
+          setSnakeBodyY((prevArray: number[]) =>
             prevArray.map((value, index) =>
               index === 0 ? prevArray[0] : prevArray[index - 1]
             )
           );
-          console.log(snakeBodyX + " " + snakeBodyY);
-
           break;
         case "ArrowRight":
           setDirection(Direction.Right);
-          setSnakeBodyX((prevArray) =>
+          setSnakeBodyX((prevArray: number[]) =>
             prevArray.map((value, index) =>
               index === 0 ? prevArray[0] + 10 : prevArray[index - 1]
             )
           );
-          setSnakeBodyY((prevArray) =>
+          setSnakeBodyY((prevArray: number[]) =>
             prevArray.map((value, index) =>
               index === 0 ? prevArray[0] : prevArray[index - 1]
             )
           );
-
-          console.log(snakeBodyX + " " + snakeBodyY);
-
           break;
         default:
           break;
