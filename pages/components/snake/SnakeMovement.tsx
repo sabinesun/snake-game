@@ -5,12 +5,17 @@ export const useSnakeLogic = () => {
   const { snakeBodyX, setSnakeBodyX } = useSnakePositionX();
   const { snakeBodyY, setSnakeBodyY } = useSnakePositionY();
 
+  const modulo = (m: number, n: number) => {
+    return ((n % m) + m) % m;
+  };
   const moveSnake = (direction: Direction | null) => {
     switch (direction) {
       case Direction.Up:
         setSnakeBodyY((prevArray: number[]) =>
           prevArray.map((value, index) =>
-            index === 0 ? prevArray[0] - 10 : prevArray[index - 1]
+            index === 0
+              ? modulo(500, prevArray[0] - 10)
+              : modulo(500, prevArray[index - 1])
           )
         );
         setSnakeBodyX((prevArray: number[]) =>
@@ -22,7 +27,9 @@ export const useSnakeLogic = () => {
       case Direction.Down:
         setSnakeBodyY((prevArray: number[]) =>
           prevArray.map((value, index) =>
-            index === 0 ? prevArray[0] + 10 : prevArray[index - 1]
+            index === 0
+              ? modulo(500, prevArray[0] + 10)
+              : modulo(500, prevArray[index - 1])
           )
         );
         setSnakeBodyX((prevArray: number[]) =>
@@ -31,10 +38,13 @@ export const useSnakeLogic = () => {
           )
         );
         break;
+
       case Direction.Left:
         setSnakeBodyX((prevArray: number[]) =>
           prevArray.map((value, index) =>
-            index === 0 ? prevArray[0] - 10 : prevArray[index - 1]
+            index === 0
+              ? modulo(750, prevArray[0] - 10)
+              : modulo(750, prevArray[index - 1])
           )
         );
         setSnakeBodyY((prevArray: number[]) =>
@@ -46,7 +56,9 @@ export const useSnakeLogic = () => {
       case Direction.Right:
         setSnakeBodyX((prevArray: number[]) =>
           prevArray.map((value, index) =>
-            index === 0 ? prevArray[0] + 10 : prevArray[index - 1]
+            index === 0
+              ? modulo(750, prevArray[0] + 10)
+              : modulo(750, prevArray[index - 1])
           )
         );
         setSnakeBodyY((prevArray: number[]) =>

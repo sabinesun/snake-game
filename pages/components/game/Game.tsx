@@ -3,6 +3,7 @@ import Canvas from "@/pages/components/canvas/Canvas";
 import Snake from "@/pages/components/snake/Snake";
 import { Direction } from "@/pages/types/type";
 import { useSnakeLogic } from "@/pages/components/snake/SnakeMovement";
+
 interface GameProps {}
 
 const Game: React.FC<GameProps> = ({}) => {
@@ -14,32 +15,34 @@ const Game: React.FC<GameProps> = ({}) => {
     const handleKeyDown = (event: KeyboardEvent) => {
       switch (event.key) {
         case "ArrowUp":
-          setDirection(Direction.Up);
+          if (direction !== Direction.Down) {
+            setDirection(Direction.Up);
+          }
           break;
-
         case "ArrowDown":
-          setDirection(Direction.Down);
+          if (direction !== Direction.Up) {
+            setDirection(Direction.Down);
+          }
           break;
-
         case "ArrowLeft":
-          setDirection(Direction.Left);
+          if (direction !== Direction.Right) {
+            setDirection(Direction.Left);
+          }
           break;
-
         case "ArrowRight":
-          setDirection(Direction.Right);
+          if (direction !== Direction.Left) {
+            setDirection(Direction.Right);
+          }
           break;
-
         default:
           break;
       }
     };
-
     document.addEventListener("keydown", handleKeyDown);
-
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, []);
+  }, [direction]);
 
   const draw = (context: CanvasRenderingContext2D) => {
     context.clearRect(0, 0, 750, 500);
@@ -50,7 +53,6 @@ const Game: React.FC<GameProps> = ({}) => {
     const intervalId = setInterval(() => {
       moveSnake(direction);
     }, 100);
-    // update snake position every 1 second
     return () => clearInterval(intervalId);
   }, [direction, moveSnake]);
 
