@@ -61,8 +61,8 @@ const Game: React.FC<GameProps> = ({}) => {
 
   useEffect(() => {
     const intervalId = setInterval(() => {
+      moveFood(snakeBodyX, snakeBodyY, direction);
       moveSnake(direction);
-      moveFood(snakeBodyX, snakeBodyY);
     }, 100);
     return () => clearInterval(intervalId);
   }, [direction, moveSnake, moveFood, snakeBodyY, snakeBodyX]);
