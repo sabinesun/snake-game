@@ -17,3 +17,19 @@ export const useSnakePositionY = () => {
   };
   return { snakeBodyY, setSnakeBodyY };
 };
+
+export const useFoodX = () => {
+  const [foodX, setFood] = useState<number>(370);
+  const setFoodX = (newValue: number) => {
+    setFood(newValue);
+  };
+  return { foodX, setFoodX };
+};
+
+export const useFoodY = () => {
+  const [foodY, setFood] = useState<number>(250);
+  const setFoodY = (newValue: number) => {
+    setFood(newValue);
+  };
+  return { foodY, setFoodY };
+};

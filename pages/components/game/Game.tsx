@@ -5,13 +5,15 @@ import { Direction } from "@/pages/types/type";
 import { useSnakeLogic } from "@/pages/components/snake/SnakeMovement";
 import gameOver from "@/pages/components/game/GameOver";
 import Over from "@/pages/components/game/GameOverPage";
-
+import { useFoodPosition } from "@/pages/components/food/FoodPosition";
+import Food from "@/pages/components/food/Food";
 interface GameProps {}
 
 const Game: React.FC<GameProps> = ({}) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const [direction, setDirection] = useState<Direction | null>(null);
   const { snakeBodyX, snakeBodyY, moveSnake } = useSnakeLogic();
+  const { foodX, foodY, moveFood } = useFoodPosition();
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -48,8 +50,9 @@ const Game: React.FC<GameProps> = ({}) => {
 
   const draw = (context: CanvasRenderingContext2D) => {
     if (!gameOver(snakeBodyX, snakeBodyY, context)) {
-      context.clearRect(0, 0, 750, 500);
+      context.clearRect(0, 0, context.canvas.width, context.canvas.height);
       Snake({ context, snakeBodyX, snakeBodyY });
+      Food({ context, foodX, foodY });
     } else {
       setDirection(null);
       Over(context);
@@ -59,9 +62,10 @@ const Game: React.FC<GameProps> = ({}) => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       moveSnake(direction);
+      moveFood(snakeBodyX, snakeBodyY);
     }, 100);
     return () => clearInterval(intervalId);
-  }, [direction, moveSnake]);
+  }, [direction, moveSnake, moveFood, snakeBodyY, snakeBodyX]);
 
   useEffect(() => {
     draw;
