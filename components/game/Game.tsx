@@ -1,12 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
-import Canvas from "@/pages/components/canvas/Canvas";
-import Snake from "@/pages/components/snake/Snake";
-import { Direction } from "@/pages/types/type";
-import { useSnakeLogic } from "@/pages/components/snake/SnakeMovement";
-import gameOver from "@/pages/components/game/GameOver";
-import Over from "@/pages/components/game/GameOverPage";
-import { useFoodPosition } from "@/pages/components/food/FoodPosition";
-import Food from "@/pages/components/food/Food";
+import Canvas from "@/components/canvas/Canvas";
+import Snake from "@/components/snake/Snake";
+import { Direction } from "@/types/type";
+import { useSnakeLogic } from "@/components/snake/SnakeMovement";
+import gameOver from "@/components/game/GameOver";
+import Over from "@/components/game/GameOverPage";
+import { useFoodPosition } from "@/components/food/FoodPosition";
+import Food from "@/components/food/Food";
 interface GameProps {}
 
 const Game: React.FC<GameProps> = ({}) => {

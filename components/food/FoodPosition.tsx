@@ -1,5 +1,5 @@
-import { useFoodX, useFoodY } from "@/pages/hooks/useState";
-import { Direction } from "@/pages/types/type";
+import { useFoodX, useFoodY } from "@/hooks/useState";
+import { Direction } from "@/types/type";
 
 export const useFoodPosition = () => {
   const { foodX, setFoodX } = useFoodX();
@@ -17,8 +17,8 @@ export const useFoodPosition = () => {
   ) => {
     for (let i = 0; i < snakeBodyX.length; i++) {
       if (snakeBodyX[i] === foodX && snakeBodyY[i] === foodY) {
-        setFoodX(getRandomArbitrary(0, 750));
-        setFoodY(getRandomArbitrary(0, 500));
+        setFoodX(getRandomArbitrary(0, 400));
+        setFoodY(getRandomArbitrary(0, 300));
 
         switch (direction) {
           case Direction.Up:

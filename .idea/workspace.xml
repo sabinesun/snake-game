@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ade1161-3034-4728-b55e-f56bf72764f0" name="Changes" comment="feat : add hooks &amp; types">
-      <change afterPath="$PROJECT_DIR$/pages/components/snake/SnakeMovement.tsx" afterDir="false" />
+    <list default="true" id="4ade1161-3034-4728-b55e-f56bf72764f0" name="Changes" comment="feat : add growing snake">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/components/game/Game.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/components/game/Game.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/components/canvas/Canvas.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/components/canvas/Canvas.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/components/food/FoodPosition.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/components/food/FoodPosition.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/components/game/GameOver.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/components/game/GameOver.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/components/snake/SnakeMovement.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/components/snake/SnakeMovement.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +54,8 @@
       <workItem from="1679661871370" duration="104000" />
       <workItem from="1679926113743" duration="11839000" />
       <workItem from="1680001547837" duration="755000" />
+      <workItem from="1680201365071" duration="164000" />
+      <workItem from="1680354898343" duration="391000" />
     </task>
     <task id="LOCAL-00001" summary="feat : add hooks &amp; types">
       <created>1680010115491</created>
@@ -60,7 +64,56 @@
       <option name="project" value="LOCAL" />
       <updated>1680010115491</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="feat : add snake moving">
+      <created>1680012725583</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1680012725583</updated>
+    </task>
+    <task id="LOCAL-00003" summary="fix : add missing dependency in useEffect">
+      <created>1680013508242</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1680013508242</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat : add direction properties for the snake">
+      <created>1680016963141</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1680016963141</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat : add game over if the snake eat himself">
+      <created>1680022094468</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1680022094468</updated>
+    </task>
+    <task id="LOCAL-00006" summary="feat : add game over page">
+      <created>1680027370735</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1680027370735</updated>
+    </task>
+    <task id="LOCAL-00007" summary="feat : add food">
+      <created>1680102245084</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1680102245084</updated>
+    </task>
+    <task id="LOCAL-00008" summary="feat : add growing snake">
+      <created>1680103347409</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1680103347409</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -68,6 +121,13 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat : add hooks &amp; types" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat : add hooks &amp; types" />
+    <MESSAGE value="feat : add snake moving" />
+    <MESSAGE value="fix : add missing dependency in useEffect" />
+    <MESSAGE value="feat : add direction properties for the snake" />
+    <MESSAGE value="feat : add game over if the snake eat himself" />
+    <MESSAGE value="feat : add game over page" />
+    <MESSAGE value="feat : add food" />
+    <MESSAGE value="feat : add growing snake" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat : add growing snake" />
   </component>
 </project>

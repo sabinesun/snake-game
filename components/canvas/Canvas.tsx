@@ -28,8 +28,8 @@ const Canvas = forwardRef<HTMLCanvasElement, CanvasProps>(
 
     return (
       <canvas
-        width={750}
-        height={500}
+        width={400}
+        height={300}
         ref={canvasRef}
         className={" border border-white"}
         {...props}

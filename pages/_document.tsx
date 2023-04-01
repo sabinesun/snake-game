@@ -1,5 +1,4 @@
 import { Html, Head, Main, NextScript } from "next/document";
-import Game from "@/pages/components/game/Game";
 
 export default function Document() {
   return (

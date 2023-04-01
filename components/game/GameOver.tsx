@@ -12,7 +12,7 @@ const gameOver = (
         snakeBodyY[i] === snakeBodyY[j] &&
         i !== j
       ) {
-        context.clearRect(0, 0, 750, 500);
+        context.clearRect(0, 0, 400, 300);
         return true;
       }
     }

@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Game from "@/pages/components/game/Game";
+import Game from "@/components/game/Game";
 
 export default function Home() {
   return (
