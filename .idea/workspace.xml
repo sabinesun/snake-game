@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ade1161-3034-4728-b55e-f56bf72764f0" name="Changes" comment="feat : add growing snake">
+    <list default="true" id="4ade1161-3034-4728-b55e-f56bf72764f0" name="Changes" comment="refactor : restructure the code">
+      <change afterPath="$PROJECT_DIR$/components/canvas/BoardCanvas.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/components/canvas/Canvas.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/components/canvas/Canvas.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/components/food/FoodPosition.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/components/food/FoodPosition.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/components/game/GameOver.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/components/game/GameOver.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/components/snake/SnakeMovement.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/components/snake/SnakeMovement.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/canvas/Canvas.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/canvas/Canvas.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/food/FoodPosition.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/food/FoodPosition.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/game/Game.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/game/Game.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/snake/SnakeMovement.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/snake/SnakeMovement.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

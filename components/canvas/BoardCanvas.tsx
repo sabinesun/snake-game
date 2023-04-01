@@ -4,12 +4,13 @@ type CanvasProps = React.DetailedHTMLProps<
   React.CanvasHTMLAttributes<HTMLCanvasElement>,
   HTMLCanvasElement
 > & {
-  draw: (context: CanvasRenderingContext2D) => void;
+  drawBoard: (context: CanvasRenderingContext2D) => void;
 };
 
-const Canvas = forwardRef<HTMLCanvasElement, CanvasProps>(
-  ({ draw, ...props }, canvasRef) => {
+const BoardCanvas = forwardRef<HTMLCanvasElement, CanvasProps>(
+  ({ drawBoard, ...props }, canvasRef) => {
     useEffect(() => {
+      console.log("test");
       if (!canvasRef) {
         return;
       }
@@ -23,13 +24,13 @@ const Canvas = forwardRef<HTMLCanvasElement, CanvasProps>(
         return;
       }
 
-      draw(context);
-    }, [draw, canvasRef]);
+      drawBoard(context);
+    }, [drawBoard, canvasRef]);
 
     return (
       <canvas
         width={700}
-        height={450}
+        height={100}
         ref={canvasRef}
         className={" border border-white"}
         {...props}
@@ -38,5 +39,5 @@ const Canvas = forwardRef<HTMLCanvasElement, CanvasProps>(
   }
 );
 
-Canvas.displayName = "Canvas";
-export default Canvas;
+BoardCanvas.displayName = "Canvas";
+export default BoardCanvas;

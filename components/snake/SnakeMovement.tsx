@@ -14,8 +14,8 @@ export const useSnakeLogic = () => {
         setSnakeBodyY((prevArray: number[]) =>
           prevArray.map((value, index) =>
             index === 0
-              ? modulo(300, prevArray[0] - 10)
-              : modulo(300, prevArray[index - 1])
+              ? modulo(450, prevArray[0] - 10)
+              : modulo(450, prevArray[index - 1])
           )
         );
         setSnakeBodyX((prevArray: number[]) =>
@@ -28,8 +28,8 @@ export const useSnakeLogic = () => {
         setSnakeBodyY((prevArray: number[]) =>
           prevArray.map((value, index) =>
             index === 0
-              ? modulo(300, prevArray[0] + 10)
-              : modulo(300, prevArray[index - 1])
+              ? modulo(450, prevArray[0] + 10)
+              : modulo(450, prevArray[index - 1])
           )
         );
         setSnakeBodyX((prevArray: number[]) =>
@@ -43,8 +43,8 @@ export const useSnakeLogic = () => {
         setSnakeBodyX((prevArray: number[]) =>
           prevArray.map((value, index) =>
             index === 0
-              ? modulo(400, prevArray[0] - 10)
-              : modulo(400, prevArray[index - 1])
+              ? modulo(700, prevArray[0] - 10)
+              : modulo(700, prevArray[index - 1])
           )
         );
         setSnakeBodyY((prevArray: number[]) =>
@@ -57,8 +57,8 @@ export const useSnakeLogic = () => {
         setSnakeBodyX((prevArray: number[]) =>
           prevArray.map((value, index) =>
             index === 0
-              ? modulo(400, prevArray[0] + 10)
-              : modulo(400, prevArray[index - 1])
+              ? modulo(700, prevArray[0] + 10)
+              : modulo(700, prevArray[index - 1])
           )
         );
         setSnakeBodyY((prevArray: number[]) =>

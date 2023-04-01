@@ -7,13 +7,17 @@ import gameOver from "@/components/game/GameOver";
 import Over from "@/components/game/GameOverPage";
 import { useFoodPosition } from "@/components/food/FoodPosition";
 import Food from "@/components/food/Food";
+import Board from "@/components/board/Board";
+import BoardCanvas from "@/components/canvas/BoardCanvas";
 interface GameProps {}
 
 const Game: React.FC<GameProps> = ({}) => {
-  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const canvasRef1 = useRef<HTMLCanvasElement | null>(null);
+  const canvasRef2 = useRef<HTMLCanvasElement | null>(null);
+
   const [direction, setDirection] = useState<Direction | null>(null);
   const { snakeBodyX, snakeBodyY, moveSnake } = useSnakeLogic();
-  const { foodX, foodY, moveFood } = useFoodPosition();
+  const { foodX, foodY, moveFood, point } = useFoodPosition();
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -55,8 +59,14 @@ const Game: React.FC<GameProps> = ({}) => {
       Food({ context, foodX, foodY });
     } else {
       setDirection(null);
+      context.clearRect(0, 0, context.canvas.width, context.canvas.height);
       Over(context);
     }
+  };
+
+  const drawBoard = (context: CanvasRenderingContext2D) => {
+    context.clearRect(0, 0, context.canvas.width, context.canvas.height);
+    Board({ context, point });
   };
 
   useEffect(() => {
@@ -67,14 +77,11 @@ const Game: React.FC<GameProps> = ({}) => {
     return () => clearInterval(intervalId);
   }, [direction, moveSnake, moveFood, snakeBodyY, snakeBodyX]);
 
-  useEffect(() => {
-    draw;
-  }, [direction, snakeBodyX, snakeBodyY, draw]);
-
   return (
     <>
-      <div className={" flex h-screen items-center justify-center"}>
-        <Canvas ref={canvasRef} draw={draw} />
+      <div className={" flex h-screen flex-col items-center justify-center"}>
+        <BoardCanvas ref={canvasRef1} drawBoard={drawBoard} />
+        <Canvas ref={canvasRef2} draw={draw} />
       </div>
     </>
   );
