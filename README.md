@@ -12,8 +12,8 @@ The game is played using the arrow keys on your keyboard. The objective of the g
 To install and run the game locally, follow these steps:
 
 1. Clone the repository
-2. Install dependencies with npm install
-3. Start the development server with npm run dev
+2. Install dependencies with ` npm install `
+3. Start the development server with ` npm run dev `
 4. Open http://localhost:3000 in your web browser
 
 
