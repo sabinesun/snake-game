@@ -54,6 +54,11 @@ const Game: React.FC<GameProps> = ({}) => {
 
   const draw = (context: CanvasRenderingContext2D) => {
     if (!gameOver(snakeBodyX, snakeBodyY, context)) {
+      document.addEventListener("keydown", (event) => {
+        if (event.code === "Space") {
+          setDirection(null);
+        }
+      });
       context.clearRect(0, 0, context.canvas.width, context.canvas.height);
       Snake({ context, snakeBodyX, snakeBodyY });
       Food({ context, foodX, foodY });

@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4ade1161-3034-4728-b55e-f56bf72764f0" name="Changes" comment="refactor : restructure the code">
-      <change afterPath="$PROJECT_DIR$/components/canvas/BoardCanvas.tsx" afterDir="false" />
+    <list default="true" id="4ade1161-3034-4728-b55e-f56bf72764f0" name="Changes" comment="feat : add score">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/canvas/Canvas.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/canvas/Canvas.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/food/FoodPosition.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/food/FoodPosition.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/board/Board.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/board/Board.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/game/Game.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/game/Game.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/snake/SnakeMovement.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/snake/SnakeMovement.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680103347409</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="feat : add score">
+      <created>1680360109685</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1680360109685</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,6 +133,7 @@
     <MESSAGE value="feat : add game over page" />
     <MESSAGE value="feat : add food" />
     <MESSAGE value="feat : add growing snake" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat : add growing snake" />
+    <MESSAGE value="feat : add score" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat : add score" />
   </component>
 </project>

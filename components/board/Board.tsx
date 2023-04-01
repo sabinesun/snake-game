@@ -8,7 +8,6 @@ interface Board {
 const Board = ({ context, point }: Board) => {
   context.font = "20px Comic Sans MS";
   context.fillStyle = "White";
-
   context.fillText("Score : " + point.toString(), 15, 30);
 };
 
